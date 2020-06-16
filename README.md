@@ -1,24 +1,58 @@
-# README
+# Rails6 + React ~~+ TypeScript~~
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Version
+Rails: 6.0.3
+Ruby: 2.6.6
+React: 16.13.1
+Webpacker: 4.2.2
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+### git clone
 
-* System dependencies
+```
+cd /path/to/work
+git clone <hoge>
+cd <hoge>
+```
 
-* Configuration
+### install MySQL
+```
+brew install mysql
+mysql.server start
+```
 
-* Database creation
+### bundle install
 
-* Database initialization
+```
+bundle install
+```
 
-* How to run the test suite
+### Install yarn and setup
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+brew install yarn
+bin/rake yarn:install
+```
 
-* Deployment instructions
+### db setup
 
-* ...
+```
+bin/rails db:create
+RAILS_ENV=development bin/rails db:migrate
+```
+
+### access
+```
+bin/rails s
+./bin/webpack-dev-server
+```
+[http://localhost:3000/](http://localhost:3000/)
+
+
+## Test
+
+```
+RAILS_ENV=test bin/rake assets:precompile
+bundle exec rspec
+```
