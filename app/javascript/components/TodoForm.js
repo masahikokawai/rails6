@@ -1,6 +1,14 @@
-import React, { useState }  from 'react'
+import React, { useContext, useState }  from 'react'
 
-const TodoForm = ({ state, dispatch }) => {
+import {
+  CREATE_TODO,
+  DELETE_ALL_TODO
+} from '../actions/index'
+
+import TodoContext from '../contexts/TodoContext'
+
+const TodoForm = () => {
+  const { state, dispatch } = useContext(TodoContext)
   const [name, setName] = useState('')
   console.log('TodoForm')
   console.log({state})
@@ -12,7 +20,7 @@ const TodoForm = ({ state, dispatch }) => {
 
     // dispatch
     dispatch({
-      type: 'CREATE_TODO',
+      type: CREATE_TODO,
       name
     })
 
@@ -25,7 +33,7 @@ const TodoForm = ({ state, dispatch }) => {
     const result = window.confirm('全てのtodo を削除しますか？')
 
     // dispatch
-    if (result) dispatch({ type: 'DELETE_ALL_TODO' })
+    if (result) dispatch({ type: DELETE_ALL_TODO })
   }
 
   const unCreateble = (name === '')

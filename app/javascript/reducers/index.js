@@ -1,3 +1,9 @@
+import {
+  CREATE_TODO,
+  DELETE_TODO,
+  DELETE_ALL_TODO
+} from '../actions/index'
+
 // action = {
 //   type: 'CREATE_TODO',
 //   name: 'hoge'
@@ -9,10 +15,10 @@
 // state = [
 //   { id: 1, name: 'hoge' }
 // ]
-// 
+//
 const todos = (state = [], action) => {
   switch(action.type) {
-    case 'CREATE_TODO':
+    case CREATE_TODO:
       const todo = { name: action.name }
       const length = state.length
       // let id
@@ -24,9 +30,9 @@ const todos = (state = [], action) => {
       const id = (length === 0) ? 1 : state[length - 1].id + 1
       // return [...state, {id: id, ...todo}]
       return [...state, { id, ...todo }]
-    case 'DELETE_TODO':
+    case DELETE_TODO:
       return state.filter(todo => todo.id !== action.id)
-    case 'DELETE_ALL_TODO':
+    case DELETE_ALL_TODO:
       return []
     default: 
       return state
