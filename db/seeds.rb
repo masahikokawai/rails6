@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Todo.find_or_create_by!(name: 'todo-1')
+Todo.find_or_create_by!(name: 'todo-2')
+Todo.find_or_create_by!(name: 'todo-3')
+Todo.find_or_create_by!(name: 'todo-4')
+Todo.find_or_create_by!(name: 'todo-5')
