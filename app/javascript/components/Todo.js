@@ -24,11 +24,6 @@ const Todo = props => {
     setName('')
   }
 
-  // const deleteTodo = e => {
-  //   // 画面リロード抑止
-  //   e.preventDefault()
-  // }
-
   const deleteAllTodos = e => {
     // 画面リロード抑止
     e.preventDefault()
@@ -63,46 +58,6 @@ const Todo = props => {
           </tr>
         </thead>
         <tbody>
-        {/* ①Warning: Each child in a list should have a unique "key" prop. */} 
-        {/* {
-          state.map(todo => (
-            <tr>
-              <td>{todo.id}</td>
-              <td>{todo.name}</td>
-              <td><button type="button">delete</button></td>
-            </tr>
-          ))
-        } */} 
-        {/* ②{
-          state.map((todo, index) => (
-            <tr key={index}>
-              <td>{todo.id}</td>
-              <td>{todo.name}</td>
-              <td><button type="button">delete</button></td>
-            </tr>
-          ))
-        } */}
-
-        {/* ③{
-          state.map((todo, index) => {
-            const id = todo.id
-            const deleteTodo = () => {
-              dispatch({
-                type: 'DELETE_TODO',
-                id
-              })
-            }
-
-            return(
-              <tr key={index}>
-                <td>{id}</td>
-                <td>{todo.name}</td>
-                <td><button type="button" onClick={deleteTodo}>delete</button></td>
-              </tr>
-            )
-          })
-        } */} 
-
         { state.map((todo, index) => (<TodoList key={index} todo={todo} dispatch={dispatch} />)) }
         </tbody>
       </table>
