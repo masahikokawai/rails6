@@ -1,8 +1,4 @@
-import {
-  CREATE_TODO,
-  DELETE_TODO,
-  DELETE_ALL_TODO
-} from '../actions/index'
+import { CREATE_TODO, DELETE_TODO, DELETE_ALL_TODO } from "../actions/index";
 
 // action = {
 //   type: 'CREATE_TODO',
@@ -17,26 +13,26 @@ import {
 // ]
 //
 const todos = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
     case CREATE_TODO:
-      const todo = { name: action.name }
-      const length = state.length
+      const todo = { name: action.name };
+      const length = state.length;
       // let id
       // if (length === 0) {
       //   id = 1
       // } else {
       //   id = state[length - 1].id + 1
       // }
-      const id = (length === 0) ? 1 : state[length - 1].id + 1
+      const id = length === 0 ? 1 : state[length - 1].id + 1;
       // return [...state, {id: id, ...todo}]
-      return [...state, { id, ...todo }]
+      return [...state, { id, ...todo }];
     case DELETE_TODO:
-      return state.filter(todo => todo.id !== action.id)
+      return state.filter((todo) => todo.id !== action.id);
     case DELETE_ALL_TODO:
-      return []
-    default: 
-      return state
+      return [];
+    default:
+      return state;
   }
-}
+};
 
-export default todos
+export default todos;
