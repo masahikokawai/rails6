@@ -1,4 +1,4 @@
-# Rails6 + React ~~+ TypeScript~~
+# Rails6 + React + TypeScript ~~+ GraphQL~~
 
 ### Version
 Rails: 6.0.3
