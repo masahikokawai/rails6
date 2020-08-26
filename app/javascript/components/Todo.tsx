@@ -12,7 +12,7 @@ console.log({ TodoContext });
 
 // useReducer
 // Reducer とは、state と action を紐付けるもの
-const Todo = () => {
+const Todo: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, []);
   // console.log('Todo')
   // console.log({state})

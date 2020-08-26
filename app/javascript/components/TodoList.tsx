@@ -1,11 +1,18 @@
-// import React from 'react'
 import React, { useContext } from "react";
 
-import { DELETE_TODO } from "actions/index";
+import { DELETE_TODO } from "../actions/index";
 
 import TodoContext from "../contexts/TodoContext";
 
-const TodoList = ({ todo }) => {
+interface TodosProps {
+  key: string;
+  todo: {
+    id: number;
+    name: string;
+  };
+}
+
+const TodoList: React.FC<TodosProps> = ({ todo }) => {
   const { dispatch } = useContext(TodoContext);
   const id = todo.id;
 

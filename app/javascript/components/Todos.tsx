@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import TodoList from "./TodoList";
-
 import TodoContext from "../contexts/TodoContext";
 
 // ★Consumer, Provider
 console.log({ TodoContext });
 
-const Todos = () => {
+const Todos: React.FC = () => {
   const { state } = useContext(TodoContext);
 
   return (

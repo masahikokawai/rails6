@@ -4,7 +4,7 @@ import { CREATE_TODO, DELETE_ALL_TODO } from "../actions/index";
 
 import TodoContext from "../contexts/TodoContext";
 
-const TodoForm = () => {
+const TodoForm: React.FC = () => {
   const { state, dispatch } = useContext(TodoContext);
   const [name, setName] = useState("");
   console.log("TodoForm");
@@ -28,7 +28,6 @@ const TodoForm = () => {
     // 画面リロード抑止
     e.preventDefault();
     const result = window.confirm("全てのtodo を削除しますか？");
-
     // dispatch
     if (result) dispatch({ type: DELETE_ALL_TODO });
   };
